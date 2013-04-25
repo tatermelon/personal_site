@@ -67,12 +67,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 9, ../sass/screen.scss */
 body {
   height: 100%;
   width: 100%;
   background: url("../img/cloud_test.jpg") repeat-x;
-  background-position: 552px top;
   -webkit-background-size: 552px 368px;
   -moz-background-size: 552px 368px;
   -o-background-size: 552px 368px;
@@ -82,36 +81,36 @@ body {
 }
 
 @-webkit-keyframes bgslide {
-  /* line 23, ../sass/screen.scss */
+  /* line 20, ../sass/screen.scss */
   100% {
     background-position: 0 top;
   }
 
-  /* line 26, ../sass/screen.scss */
+  /* line 23, ../sass/screen.scss */
   0% {
     background-position: 552px top;
   }
 }
 
 @-moz-keyframes bgslide {
-  /* line 32, ../sass/screen.scss */
+  /* line 29, ../sass/screen.scss */
   100% {
     background-position: 0 top;
   }
 
-  /* line 35, ../sass/screen.scss */
+  /* line 32, ../sass/screen.scss */
   0% {
     background-position: 552px top;
   }
 }
 
 @-o-keyframes bgslide {
-  /* line 41, ../sass/screen.scss */
+  /* line 38, ../sass/screen.scss */
   100% {
     background-position: 0 top;
   }
 
-  /* line 44, ../sass/screen.scss */
+  /* line 41, ../sass/screen.scss */
   0% {
     background-position: 552px top;
   }

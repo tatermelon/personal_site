@@ -4,16 +4,13 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "compass/css3";
 
 body {
     height: 100%;
     width: 100%;
     background: url("../img/cloud_test.jpg") repeat-x;
-    background-position: 552px top;
-    -webkit-background-size: 552px 368px;
-    -moz-background-size: 552px 368px;
-    -o-background-size: 552px 368px;
-    background-size: 552px 368px;
+    @include background-size(552px 368px);
     -webkit-animation: bgslide 10s linear infinite;
     animation: bgslide 10s linear infinite;
 }
