@@ -26,7 +26,8 @@
 }
 
 .home-poster {
-  background-color: rgba(253, 253, 252, 0.95);
+  @include transition(all 0.4s ease-in);
+  background-color: rgba(253, 253, 252, 0.9);
   bottom: 0;
   cursor: pointer;
   height: 5rem;
@@ -42,20 +43,23 @@
   width: 32rem;
 
   &::after {
+    @include transition(all 0.4s ease-in);
     border-left: 2rem solid transparent;
     border-right: 2rem solid transparent;
-    border-top: 1.7rem solid $pink_light;
+    border-top: 1.7rem solid $pink;
     bottom: -3rem;
     content: "";
     height: 0;
     margin-left: -2rem;
+    opacity: 0.5;
     position: absolute;
     width: 0;
   }
 
   &:hover {
+    background-color: rgba(253, 253, 252, 1);
     &::after {
-      border-top: 1.7rem solid $pink;
+      opacity: 1;
     }
   }
 

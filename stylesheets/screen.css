@@ -153,7 +153,11 @@ html, body {
 
 /* line 28, ../sass/_home.scss */
 .home-poster {
-  background-color: rgba(253, 253, 252, 0.95);
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+  background-color: rgba(253, 253, 252, 0.9);
   bottom: 0;
   cursor: pointer;
   height: 5rem;
@@ -168,23 +172,32 @@ html, body {
   top: 0;
   width: 32rem;
 }
-/* line 44, ../sass/_home.scss */
+/* line 45, ../sass/_home.scss */
 .home-poster::after {
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
   border-left: 2rem solid transparent;
   border-right: 2rem solid transparent;
-  border-top: 1.7rem solid #fdc8cc;
+  border-top: 1.7rem solid #fc969f;
   bottom: -3rem;
   content: "";
   height: 0;
   margin-left: -2rem;
+  opacity: 0.5;
   position: absolute;
   width: 0;
 }
-/* line 57, ../sass/_home.scss */
-.home-poster:hover::after {
-  border-top: 1.7rem solid #fc969f;
+/* line 59, ../sass/_home.scss */
+.home-poster:hover {
+  background-color: #fdfdfc;
 }
-/* line 62, ../sass/_home.scss */
+/* line 61, ../sass/_home.scss */
+.home-poster:hover::after {
+  opacity: 1;
+}
+/* line 66, ../sass/_home.scss */
 .home-poster .poster-name {
   color: #5c5c5c;
   font-family: 'Lato', sans-serif;
@@ -192,7 +205,7 @@ html, body {
   letter-spacing: 0.25rem;
   line-height: 180%;
 }
-/* line 70, ../sass/_home.scss */
+/* line 74, ../sass/_home.scss */
 .home-poster .poster-subtitle {
   color: #5c5c5c;
   font-family: 'Cutive Mono', serif;
@@ -201,12 +214,12 @@ html, body {
 }
 
 @media screen and (max-width: 450px) {
-  /* line 79, ../sass/_home.scss */
+  /* line 83, ../sass/_home.scss */
   .home-actions {
     padding: 3rem 2rem;
   }
 
-  /* line 83, ../sass/_home.scss */
+  /* line 87, ../sass/_home.scss */
   .home-poster {
     margin-top: 30vh;
   }
