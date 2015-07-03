@@ -1,0 +1,20 @@
+html, body {
+  background-color: $primary_lightest;
+  height: 100%;
+  width: 100%;
+}
+
+#content {
+  height: 100%;
+}
+
+#top-banner {
+  background-color: pink;
+  background-image: url('../img/skywater-pattern.jpg');
+  background-position: 0 0%;
+  background-size: cover;
+  height: 8px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

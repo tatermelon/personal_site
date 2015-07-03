@@ -5,40 +5,62 @@
 
 @import "compass/reset";
 @import "compass/css3";
+@import "colors";
+@import "fonts";
+@import "helpers";
+@import "layout";
 
-body {
-    height: 100%;
-    width: 100%;
-    background: url("../img/cloud_test.jpg") repeat-x;
-    @include background-size(552px 368px);
-    -webkit-animation: bgslide 10s linear infinite;
-    animation: bgslide 10s linear infinite;
+@import "home";
+
+
+
+
+#photos {
+    background-color: #FFC5C6;
+}
+
+#random {
+    background-color: #FFE6BE;
+}
+
+#resume {
+    background-color: #C9F8C9;
+}
+
+#experiments {
+    background-color: #C9FCFF;
+}
+
+#contact {
+    background-color: #D0C4F9;
 }
 
 
-@-webkit-keyframes bgslide {
-  100% {
-    background-position: 0 top;
-  }
-  0% {
-    background-position: 552px top;
-  }
+/* Test/Playing CSS */
+
+
+.centered {
+    text-align: center;
+    margin: auto;
 }
 
-@-moz-keyframes bgslide {
-  100% {
-    background-position: 0 top;
-  }
-  0% {
-    background-position: 552px top;
-  }
+.centered img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 300px;
+    margin-top: -200px; /* Half the height */
+    margin-left: -200px; /* Half the width */
 }
 
-@-o-keyframes bgslide {
-  100% {
-    background-position: 0 top;
-  }
-  0% {
-    background-position: 552px top;
-  }
+img {
+/*    -webkit-transition: -webkit-filter 1s;*/
 }
+
+img:hover {
+/*    -webkit-filter: blur(3px); */
+/*    -webkit-filter: hue-rotate(150deg);*/
+}
+
+ 
