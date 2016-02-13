@@ -1,46 +1,79 @@
 var Layout = function(params) {
-  var windowHeight = 0;
+  var self = this;
 
+  // Cached DOM
   var $container = params.$container;
-  var $topBanner = $container.find('#top-banner');
-  
-  /* Assumes initially positioned at top of page */
-  var setCentered = function(accessor) {
-    $(accessor).each(function() {
-      var elementHeight = $(this).height();
-      var margin = (windowHeight / 2) - (elementHeight / 2);
-      
-      $(this).css('margin-top', margin + 'px');
+  var $preloader = $container.find(".image-loader");
+  var $homePlaceholder = $container.find(".home-placeholder");
+  var $homePoster = $container.find(".home-poster");
+
+  var preloadImage = function(imgSource) {
+    var preloader = $.Deferred();
+    var preloadImage = new Image();
+
+    preloadImage.onload = function() {
+      preloader.resolve();
+    };
+
+    preloadImage.src = imgSource;
+
+    return preloader;
+  };
+
+  var animateHomeIn = function() {
+    $homePlaceholder.fadeOut(function() {
+      $homePoster.show();
+      $homePoster.css({
+        height: '15rem'
+      });
+      setTimeout(function() {
+        $homePoster.find('.poster-name').css({
+          top: '4.5rem'
+        });
+        $homePoster.find('.poster-subtitle').css({
+          top: '7.7rem'
+        });
+        setTimeout(function() {
+          $homePoster.addClass('indicator-visible');
+        }, 400)
+      }, 400);
     });
   };
 
-  var handleScroll = function(e) {
-    var scrollOffset = $container.scrollTop();
-    console.log('hi');
-
-    $topBanner.css({
-      'background-position': '0 ' + scrollOffset + 'px'
-    });
+  var animateHomeOut = function() {
+      $homePoster.show();
+      $homePoster.css({
+        height: '15rem'
+      });
+      setTimeout(function() {
+        $homePoster.find('.poster-name').css({
+          top: '4.5rem'
+        });
+        $homePoster.find('.poster-subtitle').css({
+          top: '7.7rem'
+        });
+        setTimeout(function() {
+          $homePoster.addClass('indicator-visible');
+        }, 400)
+      }, 400);
   };
-  
-  return {
-    render: function() {
-      windowHeight = $(window).height();
-      setCentered('.vertically-centered');
-    },
-    setupEvents: function() {
-      $(window).scroll(handleScroll);
-    }
+
+  this.initialize = function() {
+    var imageLoaders = [
+      preloadImage('./img/photos/home_bg.jpg')
+    ];
+
+    $.when.apply($, imageLoaders).then(function() {
+      animateHomeIn();
+    });
   };
 };
 
 
 $(function() {
-  var layout = Layout({
+  var layout = new Layout({
     $container: $('body')
   });
-  layout.render();
-  layout.setupEvents();
-  
-  $(window).resize(layout.render);
+
+  layout.initialize();
 });

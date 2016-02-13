@@ -11,31 +11,56 @@
   width: 100vw;
 }
 
+.home-placeholder {
+  bottom: 0;
+  height: 2.5rem;
+  left: 0;
+  margin: auto;
+  position: ABSOLUTE;
+  right: 0;
+  top: 0;
+  width: 6rem;
+}
+
 .home-actions {
-  padding: 4rem 3rem;
+  padding: 3rem;
   position: absolute;
   right: 0;
   top: 0;
 
   .action-link {
+    @include transition(all 0.2s ease-in);
+    background-color: rgba($primary_lighter, 0.7);
+    border: 1px solid;
     color: $black;
+    display: block;
+    float: right;
     font-family: 'Cutive Mono', serif;
     font-size: 1.1rem;
-    margin-left: 2rem;
+    padding: 1.2rem;
+    width: 5.5rem;
+    &:first-child {
+      border-left: 0;
+    }
+    &:hover {
+      background-color: rgba(253, 253, 252, 0.7);
+      text-decoration: none;
+    }
   }
 }
+
 
 .home-poster {
   @include transition(all 0.4s ease-in);
   background-color: rgba(253, 253, 252, 0.9);
   bottom: 0;
   cursor: pointer;
-  height: 5rem;
   left: 0;
+  height: 0;
   margin: 38vh auto;
   max-width: 90vw;
   min-width: 28rem;
-  padding: 4.5rem 0 5rem;
+  overflow: hidden;
   position: absolute;
   right: 0;
   text-align: Center;
@@ -51,9 +76,16 @@
     content: "";
     height: 0;
     margin-left: -2rem;
-    opacity: 0.5;
+    opacity: 0;
     position: absolute;
     width: 0;
+  }
+
+  &.indicator-visible {
+    overflow: visible;
+    &::after {
+      opacity: 0.5;
+    }
   }
 
   &:hover {
@@ -64,18 +96,26 @@
   }
 
   .poster-name {
+    @include transition(top 0.5s ease-in);
     color: $black;
     font-family: 'Lato', sans-serif;
     font-size: 1.8rem;
     letter-spacing: 0.25rem;
     line-height: 180%;
+    position: absolute;
+    top: -3rem;
+    width: 100%;
   }
 
   .poster-subtitle {
+    @include transition(top 0.5s ease-in);
     color: $black;
     font-family: 'Cutive Mono', serif;
     font-size: 1.1rem;
     line-height: 150%;
+    position: absolute;
+    top: -3rem;
+    width: 100%;
   }
 }
 
