@@ -1,0 +1,49 @@
+html, body {
+  background-color: $primary_lightest;
+  height: 100%;
+  width: 100%;
+}
+
+#content {
+  height: 100%;
+}
+
+#top-banner {
+  background-color: $primary;
+  height: 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.header {
+  @include box-shadow(1px 1px 2px 2px rgba(138, 138, 138, 0.16));
+  background: $offwhite;
+  padding: 2.5rem 2rem 2rem;
+  position: relative;
+
+  .logo {
+    color: $pink_light;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .header-links {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+
+    a {
+      color: $black;
+    }
+  }
+}
+
+.content-page {
+  background: white;
+  min-height: 100vh;
+}

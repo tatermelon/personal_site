@@ -1,0 +1,140 @@
+
+#splash {
+    background-image: url('../img/photos/home_bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.green-tint {
+  background-color: rgba($primary_light, 0.11);
+  height: 100vh;
+  width: 100vw;
+}
+
+.splash-placeholder {
+  bottom: 0;
+  height: 2.5rem;
+  left: 0;
+  margin: auto;
+  position: ABSOLUTE;
+  right: 0;
+  top: 0;
+  width: 6rem;
+}
+
+
+.splash-poster {
+  @include transition(all 0.4s ease-in);
+  @include transition-delay(0.1s);
+  background-color: rgba(253, 253, 252, 0.9);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  height: 0;
+  margin: 38vh auto;
+  max-width: 90vw;
+  min-width: 28rem;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: Center;
+  top: 0;
+  width: 32rem;
+
+  .poster-name {
+    @include transition(top 0.5s ease-in);
+    color: $black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.25rem;
+    line-height: 180%;
+    position: absolute;
+    top: -3rem;
+    width: 100%;
+  }
+
+  .poster-subtitle {
+    @include transition(top 0.5s ease-in);
+    color: $black;
+    font-family: 'Cutive Mono', serif;
+    font-size: 1.1rem;
+    line-height: 150%;
+    position: absolute;
+    top: -3rem;
+    width: 100%;
+  }
+
+  .down-arrow {
+    @include transition(all 0.4s ease-in);
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-top: 1.7rem solid $pink;
+    bottom: -3rem;
+    display: inline-block;
+    height: 0;
+    margin-left: -2rem;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  &.animate-show {
+    @include animation(indicator-show 1s forwards);
+    height: 15rem;
+    opacity: 1;
+
+    .poster-name, .poster-subtitle {
+      @include transition-delay(0.5s);
+    }
+
+    .poster-name {
+      top: 4.5rem;
+    }
+
+    .poster-subtitle {
+      top: 7.7rem;
+    }
+
+    .down-arrow {
+      @include animation(temp-transition-delay 1s forwards);
+      opacity: 0.5;
+    }
+
+    &:hover {
+      background-color: rgba(253, 253, 252, 1);
+      .down-arrow {
+        opacity: 1;
+      }
+    }
+  }
+
+  
+}
+
+@keyframes indicator-show {
+  0%, 99% {
+    overflow: hidden;
+  }
+
+  100% {
+    @include transition-delay(0s);
+    overflow: visible;
+  }
+}
+
+@keyframes temp-transition-delay {
+  0%, 99% {
+    @include transition-delay(1s);
+  }
+
+  100% {
+    @include transition-delay(0s);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .splash-poster {
+    margin-top: 30vh;
+  }
+}
