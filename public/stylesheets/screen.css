@@ -175,45 +175,46 @@ a:hover {
 /* line 1, ../sass/_layout.scss */
 html, body {
   background-color: #ebfefb;
+  color: #5c5c5c;
   height: 100%;
   width: 100%;
 }
 
-/* line 7, ../sass/_layout.scss */
+/* line 8, ../sass/_layout.scss */
 #content {
   height: 100%;
 }
 
-/* line 11, ../sass/_layout.scss */
+/* line 12, ../sass/_layout.scss */
 #top-banner {
   background-color: #86e2d5;
-  height: 0.5rem;
+  height: 0.3rem;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
 }
 
-/* line 20, ../sass/_layout.scss */
+/* line 21, ../sass/_layout.scss */
 #header-content {
   position: relative;
 }
 
-/* line 24, ../sass/_layout.scss */
+/* line 25, ../sass/_layout.scss */
 .header {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-box-shadow: 1px 1px 2px 2px rgba(138, 138, 138, 0.16);
-  -webkit-box-shadow: 1px 1px 2px 2px rgba(138, 138, 138, 0.16);
-  box-shadow: 1px 1px 2px 2px rgba(138, 138, 138, 0.16);
-  background: #fcfdfc;
+  -moz-box-shadow: 1px 1px 2px 0px rgba(138, 138, 138, 0.16);
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(138, 138, 138, 0.16);
+  box-shadow: 1px 1px 2px 0px rgba(138, 138, 138, 0.16);
+  background: #FEFEFE;
   line-height: 2rem;
-  padding: 2rem 2rem 1.5rem;
+  padding: 1.8rem 5rem 1.5rem;
   position: absolute;
   width: 100%;
 }
-/* line 33, ../sass/_layout.scss */
+/* line 34, ../sass/_layout.scss */
 .header .logo {
   color: #fdc8cc;
   font-family: 'Lato', sans-serif;
@@ -222,34 +223,49 @@ html, body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-/* line 40, ../sass/_layout.scss */
+/* line 41, ../sass/_layout.scss */
 .header .logo:hover, .header .logo.active {
   text-decoration: none;
 }
-/* line 45, ../sass/_layout.scss */
+/* line 46, ../sass/_layout.scss */
 .header .header-links {
   bottom: 1.7rem;
   position: absolute;
-  right: 2rem;
+  right: 5rem;
 }
-/* line 50, ../sass/_layout.scss */
+/* line 51, ../sass/_layout.scss */
 .header .header-links a {
   color: #5c5c5c;
   padding-left: 2rem;
 }
-/* line 56, ../sass/_layout.scss */
+/* line 57, ../sass/_layout.scss */
 .header.affixed {
   position: fixed;
 }
 
-/* line 61, ../sass/_layout.scss */
+/* line 62, ../sass/_layout.scss */
 .content-page {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: white;
+  margin: auto;
   min-height: 100vh;
-  padding: 12rem 10rem;
+  padding-top: 5.8rem;
+}
+
+/* line 70, ../sass/_layout.scss */
+#footer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  bottom: 5rem;
+  color: #DDD;
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 /* line 2, ../sass/_splash.scss */
@@ -419,5 +435,34 @@ html, body {
   /* line 137, ../sass/_splash.scss */
   .splash-poster {
     margin-top: 30vh;
+  }
+}
+/* line 1, ../sass/_about.scss */
+#about {
+  padding: 5% 10%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* line 7, ../sass/_about.scss */
+.intro-img {
+  float: left;
+  width: 50%;
+}
+
+/* line 12, ../sass/_about.scss */
+.about-intro {
+  font-size: 1.4rem;
+  line-height: 150%;
+  margin: 10% 0 0 0;
+}
+
+@media screen and (max-width: 640px) {
+  /* line 19, ../sass/_about.scss */
+  .intro-img {
+    display: block;
+    float: none;
+    margin: auto;
+    width: 60%;
   }
 }

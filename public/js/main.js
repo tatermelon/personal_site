@@ -17,6 +17,11 @@ mainApp.config(['$routeProvider',
         controller: 'contactController'
       })
 
+      .when('/photos', {
+        templateUrl: 'views/partials/photos.html',
+        controller: 'photosController'
+      })
+
       .otherwise({
         redirectTo: '/'
       });

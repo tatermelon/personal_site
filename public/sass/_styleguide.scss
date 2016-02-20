@@ -1,0 +1,86 @@
+
+.color-boxes {
+  position: relative;
+}
+
+.pink-column {
+  bottom: 0;
+  left: 5.5rem;
+  position: absolute;
+}
+
+.yellow-column {
+  bottom: 0;
+  left: 11rem;
+  position: absolute;
+}
+
+.color-box {
+  height: 5rem;
+  margin: 0.5rem 0.5rem 0 0;
+  width: 5rem;
+}
+
+.primary_lightest {
+  background-color: $primary_lightest;
+}
+
+.primary_lighter {
+  background-color: $primary_lighter;
+}
+
+.primary_light {
+  background-color: $primary_light;
+}
+
+.primary {
+  background-color: $primary;
+}
+
+.primary_dark {
+  background-color: $primary_dark;
+}
+
+.primary_darker {
+  background-color: $primary_darker;
+}
+
+.pink_lighter {
+  background-color: $pink_lighter;
+}
+
+.pink_light {
+  background-color: $pink_light;
+}
+
+.pink {
+  background-color: $pink;
+}
+
+.pink_dark {
+  background-color: $pink_dark;
+}
+
+.pink_darker {
+  background-color: $pink_darker;
+}
+
+.yellow_lighter {
+  background-color: $yellow_lighter;
+}
+
+.yellow_light {
+  background-color: $yellow_light;
+}
+
+.yellow {
+  background-color: $yellow;
+}
+
+.yellow_dark {
+  background-color: $yellow_dark;
+}
+
+.yellow_darker {
+  background-color: $yellow_darker;
+}
