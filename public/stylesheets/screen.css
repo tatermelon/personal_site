@@ -195,15 +195,25 @@ html, body {
 }
 
 /* line 20, ../sass/_layout.scss */
+#header-content {
+  position: relative;
+}
+
+/* line 24, ../sass/_layout.scss */
 .header {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   -moz-box-shadow: 1px 1px 2px 2px rgba(138, 138, 138, 0.16);
   -webkit-box-shadow: 1px 1px 2px 2px rgba(138, 138, 138, 0.16);
   box-shadow: 1px 1px 2px 2px rgba(138, 138, 138, 0.16);
   background: #fcfdfc;
-  padding: 2.5rem 2rem 2rem;
-  position: relative;
+  line-height: 2rem;
+  padding: 2rem 2rem 1.5rem;
+  position: absolute;
+  width: 100%;
 }
-/* line 26, ../sass/_layout.scss */
+/* line 33, ../sass/_layout.scss */
 .header .logo {
   color: #fdc8cc;
   font-family: 'Lato', sans-serif;
@@ -212,21 +222,34 @@ html, body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-/* line 35, ../sass/_layout.scss */
+/* line 40, ../sass/_layout.scss */
+.header .logo:hover, .header .logo.active {
+  text-decoration: none;
+}
+/* line 45, ../sass/_layout.scss */
 .header .header-links {
+  bottom: 1.7rem;
   position: absolute;
   right: 2rem;
-  top: 3rem;
 }
-/* line 40, ../sass/_layout.scss */
+/* line 50, ../sass/_layout.scss */
 .header .header-links a {
   color: #5c5c5c;
+  padding-left: 2rem;
+}
+/* line 56, ../sass/_layout.scss */
+.header.affixed {
+  position: fixed;
 }
 
-/* line 46, ../sass/_layout.scss */
+/* line 61, ../sass/_layout.scss */
 .content-page {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   background: white;
   min-height: 100vh;
+  padding: 12rem 10rem;
 }
 
 /* line 2, ../sass/_splash.scss */

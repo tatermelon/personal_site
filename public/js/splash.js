@@ -9,8 +9,6 @@ tmi.Splash = function Splash(params) {
   var $splashPlaceholder = $container.find(".splash-placeholder");
   var $splashPoster = $container.find(".splash-poster");
 
-  var onHide = params.hideCallback;
-
   function preloadImage(imgSource) {
     var preloader = $.Deferred();
     var preloadImage = new Image();
@@ -35,13 +33,15 @@ tmi.Splash = function Splash(params) {
     $splashPoster.removeClass('animate-show');
 
     setTimeout(function() {
-      $container.slideUp(700);
+      $container.slideUp(700, function() {
+        $('.header').addClass('affixed');
+      });
     }, 500);
   }
 
   this.initialize = function initialize() {
     var imageLoaders = [
-      preloadImage('../img/photos/home_bg.jpg')
+      preloadImage('/img/photos/home_bg.jpg')
     ];
 
     $.when.apply($, imageLoaders).then(function() {
