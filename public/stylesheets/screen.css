@@ -172,6 +172,13 @@ a:hover {
   display: none;
 }
 
+/* line 90, ../sass/_helpers.scss */
+.clearfix:after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
 /* line 1, ../sass/_layout.scss */
 html, body {
   background-color: #ebfefb;
@@ -251,10 +258,12 @@ html, body {
   background: white;
   margin: auto;
   min-height: 100vh;
+  overflow: auto;
+  padding-bottom: 5rem;
   padding-top: 5.8rem;
 }
 
-/* line 70, ../sass/_layout.scss */
+/* line 72, ../sass/_layout.scss */
 #footer {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -465,4 +474,45 @@ html, body {
     margin: auto;
     width: 60%;
   }
+}
+/* line 1, ../sass/_photos.scss */
+.photo-carousel {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 75vh;
+  padding-top: 6rem;
+  position: relative;
+  width: 100%;
+}
+
+/* line 9, ../sass/_photos.scss */
+.photo-carousel-scroller {
+  height: 100%;
+  overflow: scroll;
+  overflow-y: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/* line 17, ../sass/_photos.scss */
+.photo-wrapper {
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  display: inline-block;
+  height: 100%;
+  opacity: 0.8;
+}
+/* line 23, ../sass/_photos.scss */
+.photo-wrapper .photo {
+  height: 100%;
+  display: inline-block;
+  margin-right: 1rem;
+}
+/* line 29, ../sass/_photos.scss */
+.photo-wrapper:hover {
+  cursor: pointer;
+  opacity: 1;
 }

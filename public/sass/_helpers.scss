@@ -86,3 +86,9 @@ $hsize: $size/2;
 .hidden {
   display: none;
 }
+
+.clearfix:after {
+  content: " ";
+  clear: both;
+  display: table;
+}

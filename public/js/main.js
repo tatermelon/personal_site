@@ -1,13 +1,14 @@
 var mainApp = angular.module('mainApp', [
   'ngRoute',
-  'pageControllers'
+  'pageControllers',
+  'flickrCarouselController'
 ]);
 
 mainApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
 
-      .when('/', {
+      .when('/about', {
         templateUrl: 'views/partials/about.html',
         controller: 'aboutController'
       })
@@ -23,7 +24,7 @@ mainApp.config(['$routeProvider',
       })
 
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/about'
       });
   }]);
 

@@ -13,6 +13,5 @@ pageControllers.controller('contactController', ['$scope', '$http',
 
 pageControllers.controller('photosController', ['$scope', '$http',
   function ($scope, $http) {
-
     $scope.message = 'yay photos!';
   }]);
