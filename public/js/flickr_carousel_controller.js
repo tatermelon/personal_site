@@ -14,7 +14,7 @@ flickrCarouselController.controller('flickrCarouselController', ['$scope', '$htt
     $http.jsonp("https://api.flickr.com/services/rest/" +
       "?method=flickr.photosets.getPhotos" + 
       "&api_key=" + FLICKR_KEY +
-      "&per_page=40&page=" + page +
+      "&per_page=50&page=" + page +
       "&user_id=" + FLICKR_ID +
       "&photoset_id=" + ALBUM_ID +
       "&format=json" +
@@ -35,5 +35,6 @@ flickrCarouselController.controller('flickrCarouselController', ['$scope', '$htt
     };
 
     $scope.message = 'yay photos!';
+
   }]);
 
