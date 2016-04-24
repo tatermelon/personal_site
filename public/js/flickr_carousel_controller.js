@@ -27,8 +27,9 @@ flickrCarouselController.controller('flickrCarouselController', ['$scope', '$htt
       $.each(photos, function(index,photo) {
         $scope.photos.push({
           url: "http://farm" + photo.farm + ".static.flickr.com/"
-                  + photo.server + "/"+photo.id + "_"+photo.secret 
-                  + "_c.jpg", photo
+                  + photo.server + "/" + photo.id + "_" + photo.secret 
+                  + "_c.jpg",
+          alt: photo.title
         });
       });
     };

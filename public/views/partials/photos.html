@@ -1,7 +1,7 @@
 <div ng-controller="flickrCarouselController" class="photo-carousel">
   <div class="photo-carousel-scroller">
     <div ng-repeat="photo in photos" class="photo-wrapper">
-      <img ng-src="{{ photo.url }}" class="photo" />
+      <img ng-src="{{ photo.url }}" class="photo" alt="{{ photo.alt }}" />
     </div>
   </div>
 </div>

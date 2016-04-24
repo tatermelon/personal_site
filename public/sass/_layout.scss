@@ -1,3 +1,5 @@
+$footer_height: 8rem;
+
 html, body {
   background-color: $primary_lightest;
   color: $black;
@@ -7,6 +9,7 @@ html, body {
 
 #content {
   height: 100%;
+  min-width: $min_width;
 }
 
 #top-banner {
@@ -31,6 +34,21 @@ html, body {
   position: absolute;
   width: 100%;
 
+  .mobile-menu-link {
+    color: $pink_light;
+    cursor: pointer;
+    display: none;
+    font-size: 3rem;
+    height: 2rem;
+    padding-right: 0.7rem;
+    vertical-align: middle;
+
+    [data-icon] {
+      position: relative;
+      top: -0.3rem;
+    }
+  }
+
   .logo {
     color: $pink_light;
     font-family: 'Lato', sans-serif;
@@ -38,6 +56,7 @@ html, body {
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    vertical-align: middle;
     &:hover, &.active {
       text-decoration: none;
     }
@@ -50,6 +69,7 @@ html, body {
 
     a {
       color: $black;
+      font-size: 1.2rem;
       padding-left: 2rem;
     }
   }
@@ -57,6 +77,21 @@ html, body {
   &.affixed {
     position: fixed;
   }
+
+  @media screen and (max-width: $mobile_width) {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .mobile-menu-link {
+      display: inline-block;
+    }
+
+    .header-links {
+      bottom: 1.4rem;
+      right: 15px;
+    }
+  }
+
 }
 
 .content-page {
@@ -65,17 +100,18 @@ html, body {
   margin: auto;
   min-height: 100vh;
   overflow: auto;
-  padding-bottom: 5rem;
+  padding-bottom: $footer_height;
   padding-top: 5.8rem;
 }
 
 #footer {
   @include box-sizing(border-box);
-  bottom: 5rem;
+  bottom: $footer_height;
   color: #DDD;
+  font-size: 1.2rem;
+  line-height: 5rem;
   position: relative;
   width: 100%;
-  height: 5rem;
   text-align: center;
-  padding: 1rem;
+  padding-top: 3rem;
 }

@@ -23,6 +23,79 @@
 }
 
 
+// Loading squares animation
+
+$loading-duration: 1s;
+$size: 2rem;
+$hsize: $size/2;
+
+.loading-squares {
+  width: $size;
+  height: $size;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  right: 0;
+}
+
+@keyframes square-anim{
+  0%{
+    transform: translate3d(-$hsize,-$hsize,0);
+  }
+  100%{
+    transform: translate3d($hsize,$hsize,0);
+  }
+}
+
+.loading-square {
+  animation: square-anim $loading-duration $ease-in-out infinite alternate;
+  height: $size;
+  position: absolute;
+  width: $size;
+  z-index: 1;
+}
+
+.square-left {
+  background: rgba($pink, 0.7);
+  left: 0;
+  top: 0;
+}
+
+.square-right {
+  animation-direction: alternate-reverse;
+  background: rgba($primary, 0.7);
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes intersect-anim{
+  0%{
+    transform: scale(0,0) rotateY(0);
+    animation-timing-function: $ease-in;
+  }
+  50%{
+    transform: scale(1,1) rotateY(0);
+    animation-timing-function: $ease-out;
+  }
+  100%{
+    transform: scale(0,0) rotateY(0);
+  }
+}
+
+.intersection-square {
+  animation: intersect-anim $loading-duration ease-in infinite;
+  background: $yellow_light;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+
 .splash-poster {
   @include transition(all 0.4s ease-in);
   @include transition-delay(0.1s);
